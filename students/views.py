@@ -141,6 +141,6 @@ def password_change_view(request):
             logout(request)
             return redirect("login")
 
-    # role based redirect back
+  
     template = "student_profile/password_change.html" if request.user.role == 'student' else "admin/password_change.html"
     return render(request, template, {})
