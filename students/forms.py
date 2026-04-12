@@ -13,7 +13,6 @@ class CourseForm(forms.ModelForm):
             "duration",
         ]
 
-
 class EnrollmentForm(forms.ModelForm):
     class Meta:
         model = Enrollment

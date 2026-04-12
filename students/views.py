@@ -101,7 +101,6 @@ def watch_course(request, course_id):
     }
     return render(request, 'student_course/watch_course.html', context)
 
-
 @login_required
 def update_course_status(request, course_id, status):
     if request.user.is_staff:
@@ -119,7 +118,6 @@ def update_course_status(request, course_id, status):
     
     enrollment.save()
     return redirect('student_dashboard')
-
 
 @login_required
 def password_change_view(request):
@@ -140,7 +138,6 @@ def password_change_view(request):
             messages.success(request, "Password changed successfully! Please login again.")
             logout(request)
             return redirect("login")
-
   
     template = "student_profile/password_change.html" if request.user.role == 'student' else "admin/password_change.html"
     return render(request, template, {})
